@@ -2,12 +2,17 @@ package assignment.hashtable;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+/**
+ * Own implemnetation of HashTable
+ * @author Doric
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class MyHashTable<K, V> {
 		
-		Logger logger = LoggerFactory.getLogger(MyHashTable.class);
+		private static Logger logger = LoggerFactory.getLogger(MyHashTable.class);
 	 	private static final int DEFAULT_CAPACITY = 16;
-	    
 	 	private TableEntry<K,V>[] table;
 	    private int size;
 	
@@ -28,16 +33,15 @@ public class MyHashTable<K, V> {
 	  
 	    
 	    public void put(K key, V value) {
+	    	
 	    	TableEntry<K, V> entry = new TableEntry<>(key, value, null);
-
 	        int tableEntry = getHash(key) % getTablesSize();
-
 	        TableEntry<K, V> existing = table[tableEntry];
+	        
 	        if (existing == null) {
 	        	table[tableEntry] = entry;
 	            size++;
 	        } else {
-	            // compare the keys see if key already exists
 	            while (existing.next != null) {
 	                if (existing.key.equals(key)) {
 	                    existing.value = value;
@@ -66,13 +70,11 @@ public class MyHashTable<K, V> {
 	        return null;
 	    }
 	    public void remove(K key) {
-	    	// Apply hash function to find index for given key
 	    	int tableEntryIndex = getHash(key) % getTablesSize();
 	    	
 	        if (table[tableEntryIndex] != null) 
 	          {
 	        	  TableEntry<K, V> prevEntry = null; 
-	        	  // Get head of chain 
 	  	    	  TableEntry<K, V> tableEntry = table[tableEntryIndex];
 	              while (tableEntry.next != null && !tableEntry.key.equals(key)) 
 	              {

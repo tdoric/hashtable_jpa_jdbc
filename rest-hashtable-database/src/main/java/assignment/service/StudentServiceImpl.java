@@ -11,7 +11,11 @@ import org.springframework.stereotype.Service;
 import assignment.exception.ZeroAffectedRowsException;
 import assignment.factory.Database;
 import assignment.model.Student;
-
+/**
+ * Implementation of CRUD controls in service layer
+ * @author Doric
+ *
+ */
 @Service
 public class StudentServiceImpl implements StudentService {
 	

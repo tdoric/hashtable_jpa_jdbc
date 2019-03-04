@@ -1,5 +1,10 @@
 package assignment.exception;
 
+/**
+ * Own exception class for implementation purpose
+ * @author Doric
+ *
+ */
 public class ZeroAffectedRowsException extends Exception{
 	
 	/**

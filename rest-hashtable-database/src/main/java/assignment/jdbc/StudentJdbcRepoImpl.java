@@ -7,7 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import assignment.exception.ZeroAffectedRowsException;
 import assignment.model.Student;
-
+/**
+ * Implementation of CRUD controls for JDBC
+ * @author Doric
+ *
+ */
 @Repository
 public class StudentJdbcRepoImpl implements StudentJdbcRepo {
 	
@@ -19,7 +23,6 @@ public class StudentJdbcRepoImpl implements StudentJdbcRepo {
 		
 		return jdbcTemplate.update(Statements.Student.INSERT,
 				new Object[] {student.getName(), student.getGrade() });
-		
 		
 	}
 

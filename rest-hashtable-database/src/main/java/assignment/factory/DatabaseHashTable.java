@@ -11,7 +11,11 @@ import assignment.config.HashTableProperties;
 import assignment.exception.ZeroAffectedRowsException;
 import assignment.hashtable.MyHashTable;
 import assignment.model.Student;
-
+/**
+ * Subclass of database for implementation HashTable
+ * @author Doric
+ *
+ */
 @Component
 public class DatabaseHashTable extends Database {
 	
@@ -19,7 +23,7 @@ public class DatabaseHashTable extends Database {
 	MyHashTable<Integer, Student> myHashTable;
 	@Autowired
 	HashTableProperties hashTableProperties;
-	Logger logger = LoggerFactory.getLogger(DatabaseHashTable.class);
+	private static Logger logger = LoggerFactory.getLogger(DatabaseHashTable.class);
 
 
 	@Override

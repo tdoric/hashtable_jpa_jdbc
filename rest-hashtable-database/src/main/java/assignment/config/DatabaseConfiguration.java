@@ -12,20 +12,36 @@ import assignment.enums.DatabaseImplEnum;
 import assignment.factory.Database;
 import assignment.factory.ImplementationFactory;
 import assignment.main.Application;
-
+/**
+ * Configuration class for implementation of database 
+ * @author Doric
+ *
+ */
 @Configuration
 public class DatabaseConfiguration {
 	
-	Logger logger = LoggerFactory.getLogger(Application.class);
+	private static Logger logger = LoggerFactory.getLogger(Application.class);
 	@Autowired
 	ImplementationFactory implementationFactory;
+	
+	/**
+	 * Method for creating bean Database
+	 * Input of ImplementationFactory  is DatabaseImplEnum
+	 * @return
+	 */
 	@Bean
 	public Database database() {
 		return implementationFactory.createImplementation(random());
 	}
 	
+	
+	/***
+	 * Random enum generator
+	 * @return
+	 */
 	private DatabaseImplEnum random() {
 		int pick = new Random().nextInt(DatabaseImplEnum.values().length);
+		logger.info("I' pick "+DatabaseImplEnum.values()[pick]);
 		return DatabaseImplEnum.values()[pick];
 	}
 

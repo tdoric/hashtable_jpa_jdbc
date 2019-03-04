@@ -9,11 +9,25 @@ import org.springframework.context.annotation.Configuration;
 import assignment.hashtable.MyHashTable;
 import assignment.model.Student;
 
+/**
+ * Configuration class for my own implementation of HashTable
+ * @author Doric
+ *
+ */
 @Configuration
 public class HashtableConfiguration {
-	Logger logger = LoggerFactory.getLogger(HashtableConfiguration.class);
+	
+	private static Logger logger = LoggerFactory.getLogger(HashtableConfiguration.class);
+	
 	@Autowired
 	HashTableProperties hashTableProperties;
+	/**
+	 * Method for creating Bean MyHashtable<K,V>
+	 * @return new MyHashtable with capacity if capacity is greater then 1 and 
+	 * @return new Hashtable with standard capacity if input parameter for capacity is 0 
+	 * or IllegalArgumentException is catched
+	 * 
+	 */
 	@Bean
 	public MyHashTable<Integer, Student> myHashTable(){
 		if(hashTableProperties.getSize()!=0) {

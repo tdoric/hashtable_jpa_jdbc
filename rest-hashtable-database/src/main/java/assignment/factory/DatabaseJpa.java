@@ -7,7 +7,11 @@ import org.springframework.stereotype.Component;
 
 import assignment.jpa.StudentJpaRepo;
 import assignment.model.Student;
-
+/**
+ * Subclass of database for implementation JPA 
+ * @author Doric
+ *
+ */
 @Component
 public class DatabaseJpa extends Database {
 	

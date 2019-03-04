@@ -7,7 +7,11 @@ import org.springframework.stereotype.Component;
 import assignment.exception.ZeroAffectedRowsException;
 import assignment.jdbc.StudentJdbcRepo;
 import assignment.model.Student;
-
+/**
+ * Subclasss of database for implementation Jdbc
+ * @author Doric
+ *
+ */
 @Component
 public class DatabaseJdbc extends Database {
 	

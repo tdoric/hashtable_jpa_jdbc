@@ -1,5 +1,12 @@
 package assignment.hashtable;
 
+/**
+ * Class for own implementation TableEntry
+ * @author Doric
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class TableEntry<K, V> {
 	
 	final K key;

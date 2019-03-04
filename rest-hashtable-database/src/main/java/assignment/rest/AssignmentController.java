@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import assignment.model.Student;
 import assignment.service.StudentService;
-
+/**
+ * Rest controller for CRUD controls
+ * @author Doric
+ *
+ */
 @RestController
 @RequestMapping("/student")
 public class AssignmentController {

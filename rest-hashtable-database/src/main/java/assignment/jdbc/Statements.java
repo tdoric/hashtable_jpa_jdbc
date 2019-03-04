@@ -1,5 +1,9 @@
 package assignment.jdbc;
-
+/**
+ * SQL queries for JDBC implementation
+ * @author Doric
+ *
+ */
 public final class Statements {
 	
 	public static class Student{

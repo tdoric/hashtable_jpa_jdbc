@@ -2,7 +2,11 @@ package assignment.factory;
 
 import assignment.exception.ZeroAffectedRowsException;
 import assignment.model.Student;
-
+/**
+ * Abstract class of database with CRUD methods
+ * @author Doric
+ *
+ */
 public abstract class Database {
 	
 	public void  createStudent(Student student) {

@@ -2,7 +2,11 @@ package assignment.jdbc;
 
 import assignment.exception.ZeroAffectedRowsException;
 import assignment.model.Student;
-
+/**
+ * Interface for CRUD methods for JDBC implementation
+ * @author Doric
+ *
+ */
 public interface StudentJdbcRepo {
 	
 	public int createStudent(Student student);

@@ -7,18 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import assignment.enums.DatabaseImplEnum;
-
+/**
+ * Class for returning implementation of concrete subclass of database
+ * @author Doric
+ *
+ */
 @Component
 public class ImplementationFactory extends DatabaseFactory<DatabaseImplEnum> {
 	
-	Logger logger = LoggerFactory.getLogger(ImplementationFactory.class);
+	private static Logger logger = LoggerFactory.getLogger(ImplementationFactory.class);
 	@Autowired
 	DatabaseJpa databaseJpa;
 	@Autowired
 	DatabaseJdbc databaseJdbc;
 	@Autowired
 	DatabaseHashTable databaseHashTable;
-
+	
 	@Override
 	public Database createImplementation(DatabaseImplEnum nameEnum) {
 		logger.info("Using: " + nameEnum);
