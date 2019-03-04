@@ -61,7 +61,7 @@ public class DatabaseHashTable extends Database {
 	
 	private void checkZeroAffectedRows(Integer UUID) throws ZeroAffectedRowsException {
 		if(myHashTable.get(UUID)==null) {
-			throw new ZeroAffectedRowsException("");
+			throw new ZeroAffectedRowsException("Zero affected rows");
 		}
 	}
 	

@@ -29,19 +29,25 @@ public class DatabaseJdbc extends Database {
 		try {
 			return studentJdbcRepo.getStudent(UUID);
 		}catch(EmptyResultDataAccessException e) {
-			throw new ZeroAffectedRowsException("");
+			throw new ZeroAffectedRowsException("Zero affected rows");
 		}
 		
 	}
 
 	@Override
 	public void deleteStudent(Integer UUID) throws ZeroAffectedRowsException {
-		studentJdbcRepo.deleteStudent(UUID);
+		checkZeroAffectedRows(studentJdbcRepo.deleteStudent(UUID));
 	}
 
 	@Override
 	public void updateStudent(Integer UUID, Student student) throws ZeroAffectedRowsException {
-		studentJdbcRepo.updateStudent(UUID, student);
+		checkZeroAffectedRows(studentJdbcRepo.updateStudent(UUID, student));
+	}
+	
+	private void checkZeroAffectedRows(int affectedRows) throws ZeroAffectedRowsException {
+		if(affectedRows==0) {
+			throw new ZeroAffectedRowsException("Zero affected rows");
+		}
 	}
 	
 	
