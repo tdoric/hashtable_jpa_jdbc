@@ -53,7 +53,7 @@ public class DatabaseHashTable extends Database {
 	
 	private int randomUUID() {
 		Random random = new Random();
-		if(hashTableProperties.getSize()!=0) {
+		if(hashTableProperties.getSize()!=null) {
 			return random.nextInt(hashTableProperties.getSize());
 		}
 		return random.nextInt(hashTableProperties.getNormal());

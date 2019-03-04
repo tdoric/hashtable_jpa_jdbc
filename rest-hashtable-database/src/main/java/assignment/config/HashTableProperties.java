@@ -14,14 +14,14 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration("hashTableProperties")
 public class HashTableProperties {
 	
-	private int size;
+	private Integer size;
 	private int normal;
 
-	public int getSize() {
+	public Integer getSize() {
 		return size;
 	}
 
-	public void setSize(int size) {
+	public void setSize(Integer size) {
 		this.size = size;
 	}
 

@@ -30,7 +30,7 @@ public class HashtableConfiguration {
 	 */
 	@Bean
 	public MyHashTable<Integer, Student> myHashTable(){
-		if(hashTableProperties.getSize()!=0) {
+		if(hashTableProperties.getSize()!=null) {
 			  try {
 		        	return new MyHashTable<Integer, Student>(hashTableProperties.getSize());
 		        }catch (IllegalArgumentException e) {
